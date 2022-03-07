@@ -32,7 +32,7 @@ DEBUG = False
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
 ALLOWED_HOSTS = ['127.0.0.1',
-                'young-spire-89423.herokuapp.com'
+                'caly-hair-new-app.herokuapp.com',
 ]
 
 
