@@ -1,18 +1,18 @@
-# from django.db import models
+from django.db import models
 
 
 # # # Create your models here.
 
-# class Cutting(models.Model):
-#     name = models.CharField(max_length=200)
-#     price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
+class Cutting(models.Model):
+    name = models.CharField(max_length=200)
+    price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
 
-#     class Meta:
-#         verbose_name = 'Cutting & Styling'
-#         verbose_name_plural = 'Cutting & Styling'
+    class Meta:
+        verbose_name = 'Cutting & Styling'
+        verbose_name_plural = 'Cutting & Styling'
 
-#         def __str__(self):
-#                 return self.verbose_name
+        def __str__(self):
+                return self.verbose_name
 
 # class Styling(models.Model):
 #     name = models.CharField(max_length=200)
