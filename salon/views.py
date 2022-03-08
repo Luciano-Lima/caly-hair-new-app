@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 # from .models import Cutting, Styling, Colour, Highlights, Toners, Treatment
+from .models import Cutting
 
 
 # Create your views here.
@@ -15,5 +16,9 @@ from django.shortcuts import render, redirect, reverse
 #         'highlights': highlights, 'toners': toners, 'treatment': treatment})
 
 def home(request):
-    return render(request, 'index.html')
+    cutting = Cutting.objects.all().order_by('name')
+    return render(request, 'index.html',
+    {'cutting': cutting,})
+        
+    
 
