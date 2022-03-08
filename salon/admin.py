@@ -1,9 +1,10 @@
 from django.contrib import admin
 # from .models import Cutting, Styling, Colour, Highlights, Toners, Treatment
+from .models import Cutting
 
 # # Register your models here.
 
-# admin.site.register(Cutting)
+admin.site.register(Cutting)
 # admin.site.register(Styling)
 # admin.site.register(Colour)
 # admin.site.register(Highlights)
