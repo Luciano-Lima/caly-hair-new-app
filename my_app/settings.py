@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')   
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
 ALLOWED_HOSTS = ['127.0.0.1',
@@ -93,6 +93,8 @@ WSGI_APPLICATION = 'my_app.wsgi.application'
 #     }
 # }
 
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -103,6 +105,15 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+# Conected Heroku postgresql database
+import dj_database_url  
+
+# DATABASES['default'] = dj_database_url.config(  conn_max_age=600, ssl_require=True)
+# print(DATABASE_URL)
+
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
