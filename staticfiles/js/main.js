@@ -43,3 +43,23 @@ function imgClick(e) {
     //Change img opacticy setting to the variable opacity
     e.target.style.opacity = opacity;
 }
+
+
+const fa = document.getElementById('fa-arrow')
+fa.addEventListener('click', scrollTop)
+const showArrow = () => {
+    window.addEventListener('scroll', () => {
+        let scroll = this.scrollY
+        console.log(scroll)
+        if(scroll > 1000){
+            fa.classList.add('show')
+        }else{
+            fa.classList.remove('show')
+        }
+    })
+}
+showArrow()
+
+function scrollTop() {
+    window.scrollTo({top: 0, behavior: 'smooth'})
+}
