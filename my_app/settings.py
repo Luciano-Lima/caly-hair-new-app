@@ -29,6 +29,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+#show heroku logs errors
+DEBUG_PROPAGATE_EXCEPTIONS = True 
 
 ALLOWED_HOSTS = ['127.0.0.1',
                 'caly-hair-new-app.herokuapp.com',
