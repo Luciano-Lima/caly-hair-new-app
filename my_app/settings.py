@@ -87,31 +87,31 @@ WSGI_APPLICATION = 'my_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'salon',
-#         'USER': 'rxkruvgnxrefxu',
-#         'PASSWORD': 'f23981b83250c9de734e5adb82b193ec61852de103e5cd9c3f96080acfb6b0de',
-#         'HOST': 'ec2-23-23-199-57.compute-1.amazonaws.com',
-#         'PORT': '5432',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
 
-# Conected Heroku postgresql database
-# import dj_database_url  
 
-# db_from_env = dj_database_url.config(conn_max_age=600)
-# DATABASES['default'].update(db_from_env)
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'salon',
+        'USER': 'rxkruvgnxrefxu',
+        'PASSWORD': 'f23981b83250c9de734e5adb82b193ec61852de103e5cd9c3f96080acfb6b0de',
+        'HOST': 'ec2-23-23-199-57.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}
+
+# Conected Heroku postgresql database
+import dj_database_url  
+
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
