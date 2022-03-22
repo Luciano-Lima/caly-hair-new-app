@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')   
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 #show heroku logs errors
 DEBUG_PROPAGATE_EXCEPTIONS = True 
 
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'salon',
     'crispy_forms',
 ]
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -87,31 +88,31 @@ WSGI_APPLICATION = 'my_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-
-
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('ENGINE'),
-        'NAME': os.environ.get('NAME'),
-        'USER': os.environ.get('USER'),
-        'PASSWORD': os.environ.get('PASSWORD'),
-        'HOST': os.environ.get('HOST'),
-        'PORT': os.environ.get('PORT'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
-# Conected Heroku postgresql database
-import dj_database_url  
 
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': os.environ.get('ENGINE'),
+#         'NAME': os.environ.get('NAME'),
+#         'USER': os.environ.get('USER'),
+#         'PASSWORD': os.environ.get('PASSWORD'),
+#         'HOST': os.environ.get('HOST'),
+#         'PORT': os.environ.get('PORT'),
+#     }
+# }
+
+# # Conected Heroku postgresql database
+# import dj_database_url  
+
+# db_from_env = dj_database_url.config(conn_max_age=600)
+# DATABASES['default'].update(db_from_env)
 
 
 # Password validation
